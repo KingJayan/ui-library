@@ -25,8 +25,26 @@
   margin-bottom: 0.5rem;
 }
 
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
 .logo svg {
   color: var(--accent-primary);
+  animation: pulse 3s infinite ease-in-out;
 }
 
 .logo h1 {
@@ -70,6 +88,8 @@
 
 .search-box:focus-within {
   border-color: var(--accent-primary);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  transform: translateY(-1px);
 }
 
 .search-box svg {
@@ -103,7 +123,7 @@
   border-radius: 8px;
   cursor: pointer;
   font-size: 0.9rem;
-  transition: all 0.2s;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   align-items: center;
   gap: 0.5rem;
