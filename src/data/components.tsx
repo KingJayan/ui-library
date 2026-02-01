@@ -1,7 +1,7 @@
 import { UIComponent } from '../types';
 import '../styles/components.css';
 
-// Button Components
+// Butt
 const PrimaryButton = () => <button className="btn-primary">Primary Button</button>;
 const SecondaryButton = () => <button className="btn-secondary">Secondary Button</button>;
 const OutlineButton = () => <button className="btn-outline">Outline Button</button>;
@@ -445,6 +445,144 @@ const AvatarGroup = () => (
   </div>
 );
 const AvatarGradient = () => <div className="avatar-gradient">GH</div>;
+
+// --- Modern Themes ---
+
+// Brutalist
+const BrutalistCard = () => (
+  <div className="brutalist-card">
+    <h4>Brutalist Card</h4>
+    <p>Raw design for bold interfaces.</p>
+  </div>
+);
+const BrutalistButton = () => <button className="brutalist-btn">Raw Click</button>;
+
+// Advanced Glassmorphism
+const GlassAdvancedCard = () => (
+  <div className="glass-advanced-card">
+    <h3 style={{ color: 'white', marginBottom: '0.5rem' }}>Deep Glass</h3>
+    <p style={{ color: 'rgba(255,255,255,0.7)' }}>High saturation and blur levels.</p>
+  </div>
+);
+const GlassSearch = () => (
+  <div className="glass-search-wrapper">
+    <span style={{ opacity: 0.6 }}>🔍</span>
+    <input type="text" placeholder="Search glass..." />
+  </div>
+);
+
+// Neumorphism Modernized
+const NeoInsetCard = () => (
+  <div className="neo-inset-card">
+    <p>Molded into the shadow realm.</p>
+  </div>
+);
+const NeoElevatedButton = () => <button className="neo-elevated-button">Elevated</button>;
+
+// Claymorphism
+const ClayCard = () => (
+  <div className="clay-card">
+    <h3>Claymorphism</h3>
+    <p>Soft, squishy, and tactile.</p>
+  </div>
+);
+const ClayButton = () => <button className="clay-btn">Button</button>;
+
+// Aurora Aesthetic
+const AuroraCard = () => (
+  <div className="aurora-card">
+    <div className="aurora-bg">
+      <div className="aurora-blob blob-1"></div>
+      <div className="aurora-blob blob-2"></div>
+      <div className="aurora-blob blob-3"></div>
+    </div>
+    <div style={{ position: 'relative', zIndex: 1 }}>
+      <h3 style={{ color: 'white', marginBottom: '0.5rem' }}>Aurora Effect</h3>
+      <p style={{ color: 'rgba(255,255,255,0.8)' }}>Dynamic background blobs.</p>
+    </div>
+  </div>
+);
+
+// Pixel Theme Suite
+const PixelInput = () => <input type="text" className="input-pixel" placeholder="ENTER NAME" />;
+const PixelBadge = () => <div className="badge-pixel">NEW ITEM</div>;
+const PixelRadio = () => <div className="group-pixel"><input type="radio" className="radio-pixel" defaultChecked /> <span style={{ fontFamily: "'Courier New', monospace", fontSize: '14px' }}>OPTION A</span></div>;
+
+// Brutalist Theme Suite
+const BrutalistInput = () => <div className="brutalist-container"><input type="text" className="input-brutalist" placeholder="Type here..." /></div>;
+const BrutalistBadge = () => <div className="brutalist-container"><span className="badge-brutalist">SALE</span></div>;
+const BrutalistRadio = () => <div className="brutalist-container" style={{ display: 'flex', gap: '10px', alignItems: 'center' }}><input type="radio" className="radio-brutalist" defaultChecked /> <b style={{ color: 'black', textTransform: 'uppercase' }}>Yes</b></div>;
+
+// Cyberpunk Theme Suite
+const CyberInput = () => <input type="text" className="input-cyber" placeholder="ACCESS CODE" />;
+const CyberLoader = () => <div className="loader-cyber"></div>;
+const CyberCard = () => (
+  <div className="card-cyber">
+    <h3 style={{ color: '#0ff', marginBottom: '10px', fontFamily: 'monospace' }}>SYSTEM STATUS</h3>
+    <p style={{ color: '#f0f', fontFamily: 'monospace' }}>OPTIMAL</p>
+  </div>
+);
+
+// Neumorphism Suite
+const NeoInput = () => <input type="text" className="input-neo" placeholder="Search..." />;
+const NeoRadio = () => (
+  <div className="radio-neo-wrapper">
+    <div className="radio-neo" style={{ background: '#1a1a1a' }}></div>
+    <div className="radio-neo" style={{ background: '#1a1a1a' }}></div>
+  </div>
+);
+const NeoBadge = () => <span className="badge-neo">Premium</span>;
+
+// Glassmorphism Suite
+const GlassInput = () => <div style={{ background: '#333', padding: '20px', borderRadius: '10px' }}><input type="text" className="input-glass" placeholder="Glass Input" /></div>;
+const GlassBadge = () => <div style={{ background: '#333', padding: '10px', borderRadius: '10px' }}><span className="badge-glass">v2.0</span></div>;
+const PixelButton = () => <button className="btn-pixel">START</button>;
+const PixelCard = () => (
+  <div className="card-pixel">
+    <h4>8-BIT CARD</h4>
+    <p>INSERT COIN</p>
+  </div>
+);
+
+// Minimalist Theme
+const MinimalToggle = () => (
+  <label className="toggle-minimal">
+    <input type="checkbox" />
+    <span className="toggle-track"></span>
+  </label>
+);
+
+// Cyberpunk Theme
+const CyberCheckbox = () => (
+  <label className="checkbox-cyber">
+    <input type="checkbox" defaultChecked />
+    <span className="cyber-box"></span>
+    <span className="cyber-label">ACTIVATE</span>
+  </label>
+);
+
+// Neumorphism Theme
+const NeumorphSlider = () => (
+  <div className="slider-neumorph-wrapper">
+    <input type="range" className="slider-neumorph" />
+  </div>
+);
+
+// Glassmorphism Theme
+const GlassSidebar = () => (
+  <div className="sidebar-glass">
+    <div className="glass-item active">Home</div>
+    <div className="glass-item">Profile</div>
+    <div className="glass-item">Settings</div>
+  </div>
+);
+
+// Brutalist Theme
+const BrutalistAlert = () => (
+  <div className="alert-brutalist">
+    <strong>WARNING:</strong> SYSTEM FAILURE IMMINENT
+  </div>
+);
 
 export const components: UIComponent[] = [
   // Primary Buttons (20)
@@ -1868,6 +2006,317 @@ export const components: UIComponent[] = [
     language: 'react',
     component: GradientBorder,
     code: `<div className="gradient-border-box">Gradient Border</div>\n\n/* CSS */\n.gradient-border-box {\n  position: relative;\n  background: #1a1a1a;\n  padding: 1.5rem;\n  border-radius: 12px;\n  color: white;\n}\n.gradient-border-box::before {\n  content: '';\n  position: absolute;\n  inset: -2px;\n  border-radius: 12px;\n  padding: 2px;\n  background: linear-gradient(45deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3);\n  background-size: 300% 300%;\n  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);\n  mask-composite: exclude;\n  animation: gradient-rotate 3s linear infinite;\n  z-index: -1;\n}\n@keyframes gradient-rotate {\n  to { background-position: 300% 0; }\n}`
-  }
-,
+  },
+  // --- Modern Creative Themes ---
+  {
+    id: 'brutalist-card',
+    title: 'Brutalist Card',
+    category: 'Cards',
+    theme: 'Brutalism',
+    description: 'Bold, high-contrast card with sharp shadows',
+    language: 'react',
+    component: BrutalistCard,
+    code: `<div className="brutalist-card">\n  <h4>Brutalist Card</h4>\n  <p>Raw design for bold interfaces.</p>\n</div>\n\n/* CSS */\n.brutalist-card {\n  background: #fff;\n  border: 4px solid #000;\n  padding: 1.5rem;\n  box-shadow: 10px 10px 0px #000;\n  transition: all 0.2s;\n  color: #000;\n}\n.brutalist-card:hover {\n  transform: translate(-4px, -4px);\n  box-shadow: 14px 14px 0px #000;\n}`
+  },
+  {
+    id: 'brutalist-btn',
+    title: 'Brutalist Button',
+    category: 'Buttons',
+    theme: 'Brutalism',
+    description: 'Aggressive uppercase button with solid shadow',
+    language: 'react',
+    component: BrutalistButton,
+    code: `<button className="brutalist-btn">Raw Click</button>\n\n/* CSS */\n.brutalist-btn {\n  background: #fdfd16;\n  border: 4px solid #000;\n  color: #000;\n  padding: 0.75rem 1.5rem;\n  font-weight: 900;\n  text-transform: uppercase;\n  cursor: pointer;\n  box-shadow: 4px 4px 0px #000;\n  transition: all 0.1s;\n}`
+  },
+  {
+    id: 'glass-advanced-card',
+    title: 'Deep Glass Card',
+    category: 'Cards',
+    theme: 'Glassmorphism',
+    description: 'High-fidelity glass card with saturated blur',
+    language: 'react',
+    component: GlassAdvancedCard,
+    code: `<div className="glass-advanced-card">\n  <h3>Deep Glass</h3>\n  <p>High saturation and blur levels.</p>\n</div>\n\n/* CSS */\n.glass-advanced-card {\n  background: rgba(255, 255, 255, 0.05);\n  backdrop-filter: blur(20px) saturate(180%);\n  border-radius: 20px;\n  border: 1px solid rgba(255, 255, 255, 0.1);\n  padding: 2rem;\n}`
+  },
+  {
+    id: 'glass-search',
+    title: 'Floated Glass Search',
+    category: 'Inputs',
+    theme: 'Glassmorphism',
+    description: 'Translucent floating search bar',
+    language: 'react',
+    component: GlassSearch,
+    code: `<div className="glass-search-wrapper">\n  <span>🔍</span>\n  <input type="text" placeholder="Search glass..." />\n</div>\n\n/* CSS */\n.glass-search-wrapper {\n  background: rgba(255, 255, 255, 0.03);\n  backdrop-filter: blur(15px);\n  border: 1px solid rgba(255, 255, 255, 0.1);\n  border-radius: 99px;\n  padding: 0.5rem 1.5rem;\n}`
+  },
+  {
+    id: 'neo-inset-card',
+    title: 'Modern Neo-Inset',
+    category: 'Cards',
+    theme: 'Neomorphism',
+    description: 'Inward molded soft UI card',
+    language: 'react',
+    component: NeoInsetCard,
+    code: `<div className="neo-inset-card">\n  <p>Molded into the shadow realm.</p>\n</div>\n\n/* CSS */\n.neo-inset-card {\n  background: #1a1a1a;\n  border-radius: 20px;\n  box-shadow: inset 8px 8px 16px #0d0d0d, \n              inset -8px -8px 16px #272727;\n  padding: 2rem;\n}`
+  },
+  {
+    id: 'neo-elevated-button',
+    title: 'Tactile Neo-Button',
+    category: 'Buttons',
+    theme: 'Neomorphism',
+    description: 'Modern tactile button with soft depth',
+    language: 'react',
+    component: NeoElevatedButton,
+    code: `<button className="neo-elevated-button">Elevated</button>\n\n/* CSS */\n.neo-elevated-button {\n  background: #1a1a1a;\n  border-radius: 12px;\n  box-shadow: 5px 5px 10px #0d0d0d, \n              -5px -5px 10px #272727;\n  transition: all 0.2s ease;\n}`
+  },
+  {
+    id: 'clay-card',
+    title: 'Claymorphism Card',
+    category: 'Cards',
+    theme: 'Polymorphism',
+    description: 'Soft 3D card with inner and outer shadows',
+    language: 'react',
+    component: ClayCard,
+    code: `<div className="clay-card">\n  <h3>Claymorphism</h3>\n  <p>Soft, squishy, and tactile.</p>\n</div>\n\n/* CSS */\n.clay-card {\n  background: #4f46e5;\n  border-radius: 30px;\n  padding: 2rem;\n  box-shadow: 20px 20px 60px #1e1b4b,\n              inset 4px 4px 10px rgba(255, 255, 255, 0.3);\n}`
+  },
+  {
+    id: 'aurora-card',
+    title: 'Aurora Theme Card',
+    category: 'Cards',
+    theme: 'Polymorphism',
+    description: 'Card with dynamic animated background blobs',
+    language: 'react',
+    component: AuroraCard,
+    code: `<div className="aurora-card">\n  <div className="aurora-bg">\n    <div className="aurora-blob blob-1"></div>\n    <div className="aurora-blob blob-2"></div>\n    <div className="aurora-blob blob-3"></div>\n  </div>\n  <h3>Aurora Effect</h3>\n</div>\n\n/* CSS */\n.aurora-card {\n  background: #0f172a;\n  border-radius: 24px;\n  overflow: hidden;\n}`
+  },
+  //pixel theme
+  {
+    id: 'btn-pixel',
+    title: '8-Bit Button',
+    category: 'Buttons',
+    theme: 'Pixel Art',
+    description: 'Retro gaming style button with blocky shadow',
+    language: 'react',
+    component: PixelButton,
+    code: `<button className="btn-pixel">START</button>\n\n/* CSS */\n.btn-pixel {\n  background: #ff0000;\n  border: 4px solid #fff;\n  box-shadow: -4px 4px 0px 4px #fff;\n  color: #fff;\n  font-family: 'Courier New', monospace;\n  font-weight: bold;\n  text-transform: uppercase;\n  padding: 10px 20px;\n  image-rendering: pixelated;\n}`
+  },
+  {
+    id: 'card-pixel',
+    title: '8-Bit Card',
+    category: 'Cards',
+    theme: 'Pixel Art',
+    description: 'Retro pixel art container',
+    language: 'react',
+    component: PixelCard,
+    code: `<div className="card-pixel">\n  <h4>8-BIT CARD</h4>\n  <p>INSERT COIN</p>\n</div>\n\n/* CSS */\n.card-pixel {\n  background: #2a2a2a;\n  border: 4px solid #fff;\n  image-rendering: pixelated;\n  padding: 1rem;\n  position: relative;\n  box-shadow: 8px 8px 0px 0px #000;\n}\n.card-pixel::after {\n  content: '';\n  position: absolute;\n  top: -4px; left: -4px; right: -4px; bottom: -4px;\n  box-shadow: inset 0 0 0 4px #2a2a2a;\n}`
+  },
+  //minimalist ---
+  {
+    id: 'toggle-minimal',
+    title: 'Minimal Toggle',
+    category: 'Inputs',
+    theme: 'Minimalist',
+    description: 'Clean, line-based toggle switch',
+    language: 'react',
+    component: MinimalToggle,
+    code: `<label className="toggle-minimal">\n  <input type="checkbox" />\n  <span className="toggle-track"></span>\n</label>\n\n/* CSS */\n.toggle-minimal input { display: none; }\n.toggle-track { width: 40px; height: 20px; border: 2px solid #fff; border-radius: 20px; position: relative; display: block; cursor: pointer; }\n.toggle-track::after { content: ''; width: 12px; height: 12px; background: #fff; border-radius: 50%; position: absolute; top: 2px; left: 2px; transition: 0.3s; }\ninput:checked + .toggle-track::after { transform: translateX(20px); }`
+  },
+  // --- Cyberpunk ---
+  {
+    id: 'checkbox-cyber',
+    title: 'Cyber Checkbox',
+    category: 'Inputs',
+    theme: 'Cyberpunk',
+    description: 'Neon styled checkbox',
+    language: 'react',
+    component: CyberCheckbox,
+    code: `<label className="checkbox-cyber">\n  <input type="checkbox" defaultChecked />\n  <span className="cyber-box"></span>\n  <span className="cyber-label">ACTIVATE</span>\n</label>\n\n/* CSS */\n.checkbox-cyber { display: flex; align-items: center; gap: 10px; cursor: pointer; }\n.checkbox-cyber input { display: none; }\n.cyber-box { width: 20px; height: 20px; border: 2px solid #0ff; box-shadow: 0 0 5px #0ff; display: inline-block; position: relative; }\n.checkbox-cyber input:checked + .cyber-box { background: #0ff; box-shadow: 0 0 15px #0ff; }`
+  },
+  // --- Neumorphism Additional ---
+  {
+    id: 'slider-neumorph',
+    title: 'Neo-Slider',
+    category: 'Inputs',
+    theme: 'Neomorphism',
+    description: 'Soft molded slider input',
+    language: 'react',
+    component: NeumorphSlider,
+    code: `<div className="slider-neumorph-wrapper">\n  <input type="range" className="slider-neumorph" />\n</div>\n\n/* CSS */\n.slider-neumorph { width: 100%; -webkit-appearance: none; background: #1a1a1a; height: 10px; border-radius: 5px; box-shadow: inset 3px 3px 5px #0d0d0d, inset -3px -3px 5px #272727; }\n.slider-neumorph::-webkit-slider-thumb { -webkit-appearance: none; width: 20px; height: 20px; border-radius: 50%; background: #1a1a1a; box-shadow: 3px 3px 5px #0d0d0d, -3px -3px 5px #272727; cursor: pointer; margin-top: -5px; }`
+  },
+  // --- Glassmorphism Additional ---
+  {
+    id: 'sidebar-glass',
+    title: 'Glass Sidebar',
+    category: 'Navigation',
+    theme: 'Glassmorphism',
+    description: 'Vertical glass menu stack',
+    language: 'react',
+    component: GlassSidebar,
+    code: `<div className="sidebar-glass">\n  <div className="glass-item active">Home</div>\n  <div className="glass-item">Profile</div>\n  <div className="glass-item">Settings</div>\n</div>\n\n/* CSS */\n.sidebar-glass { width: 200px; padding: 10px; background: rgba(255,255,255,0.05); backdrop-filter: blur(10px); border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); }\n.glass-item { padding: 10px; color: rgba(255,255,255,0.7); cursor: pointer; transition: 0.2s; border-radius: 8px; }\n.glass-item:hover, .glass-item.active { background: rgba(255,255,255,0.1); color: #fff; }`
+  },
+  // --- Brutalist Additional ---
+  {
+    id: 'alert-brutalist',
+    title: 'Brutalist Alert',
+    category: 'Alerts',
+    theme: 'Brutalism',
+    description: 'High impact warning box',
+    language: 'react',
+    component: BrutalistAlert,
+    code: `<div className="alert-brutalist">\n  <strong>WARNING:</strong> SYSTEM FAILURE IMMINENT\n</div>\n\n/* CSS */\n.alert-brutalist { background: #ff0000; color: #fff; border: 4px solid #000; padding: 1rem; font-weight: bold; box-shadow: 6px 6px 0px #000; text-transform: uppercase; }`
+  },
+  // --- New Pixel Suite ---
+  {
+    id: 'input-pixel',
+    title: 'Pixel Input',
+    category: 'Inputs',
+    theme: 'Pixel Art',
+    description: 'Retro terminal style input',
+    language: 'react',
+    component: PixelInput,
+    code: `<input type="text" className="input-pixel" placeholder="ENTER NAME" />\n\n/* CSS */\n.input-pixel { background: #000; border: 4px solid #fff; color: #fff; font-family: 'Courier New', monospace; padding: 10px; box-shadow: -4px 4px 0px 0px #aaa; outline: none; }`
+  },
+  {
+    id: 'badge-pixel',
+    title: 'Pixel Badge',
+    category: 'Data Display',
+    theme: 'Pixel Art',
+    description: '8-bit style status badge',
+    language: 'react',
+    component: PixelBadge,
+    code: `<div className="badge-pixel">NEW ITEM</div>\n\n/* CSS */\n.badge-pixel { background: #3b82f6; border: 2px solid #fff; color: #fff; padding: 4px 8px; font-size: 0.8rem; font-family: 'Courier New', monospace; box-shadow: -2px 2px 0px 0px #000; }`
+  },
+  {
+    id: 'radio-pixel',
+    title: 'Pixel Radio',
+    category: 'Inputs',
+    theme: 'Pixel Art',
+    description: 'Blocky radio selection',
+    language: 'react',
+    component: PixelRadio,
+    code: `<div className="group-pixel"><input type="radio" className="radio-pixel" defaultChecked /> <span>OPTION A</span></div>\n\n/* CSS */\n.radio-pixel { appearance: none; width: 24px; height: 24px; border: 4px solid #fff; background: #000; cursor: pointer; }\n.radio-pixel:checked { background: #fff; box-shadow: inset 4px 4px 0px #000; }`
+  },
+  // --- New Brutalist Suite ---
+  {
+    id: 'input-brutalist',
+    title: 'Brutalist Input',
+    category: 'Inputs',
+    theme: 'Brutalism',
+    description: 'High contrast input field',
+    language: 'react',
+    component: BrutalistInput,
+    code: `<input type="text" className="input-brutalist" placeholder="Type here..." />\n\n/* CSS */\n.input-brutalist { border: 3px solid #000; background: #fff; color: #000; padding: 12px; font-weight: bold; box-shadow: 5px 5px 0px #000; outline: none; }`
+  },
+  {
+    id: 'badge-brutalist',
+    title: 'Brutalist Badge',
+    category: 'Data Display',
+    theme: 'Brutalism',
+    description: 'Attention grabbing label',
+    language: 'react',
+    component: BrutalistBadge,
+    code: `<span className="badge-brutalist">SALE</span>\n\n/* CSS */\n.badge-brutalist { background: #ebff00; border: 2px solid #000; color: #000; padding: 4px 12px; font-weight: 900; text-transform: uppercase; box-shadow: 3px 3px 0px #000; }`
+  },
+  {
+    id: 'radio-brutalist',
+    title: 'Brutalist Radio',
+    category: 'Inputs',
+    theme: 'Brutalism',
+    description: 'Bold radio option',
+    language: 'react',
+    component: BrutalistRadio,
+    code: `<input type="radio" className="radio-brutalist" defaultChecked />\n\n/* CSS */\n.radio-brutalist { appearance: none; width: 24px; height: 24px; border: 3px solid #000; background: #fff; cursor: pointer; }\n.radio-brutalist:checked { background: #000; box-shadow: inset 0 0 0 4px #fff; }`
+  },
+  // --- New Cyberpunk Suite ---
+  {
+    id: 'input-cyber',
+    title: 'Cyber Input',
+    category: 'Inputs',
+    theme: 'Cyberpunk',
+    description: 'Neon border terminal input',
+    language: 'react',
+    component: CyberInput,
+    code: `<input type="text" className="input-cyber" placeholder="ACCESS CODE" />\n\n/* CSS */\n.input-cyber { background: rgba(0,0,0,0.8); border: 1px solid #0ff; border-left: 5px solid #0ff; color: #0ff; padding: 10px 15px; font-family: monospace; box-shadow: 0 0 10px rgba(0,255,255,0.2); }`
+  },
+  {
+    id: 'loader-cyber',
+    title: 'Cyber Loader',
+    category: 'Feedback',
+    theme: 'Cyberpunk',
+    description: 'Glitchy technical spinner',
+    language: 'react',
+    component: CyberLoader,
+    code: `<div className="loader-cyber"></div>\n\n/* CSS */\n.loader-cyber { width: 40px; height: 40px; border: 4px solid transparent; border-top-color: #f0f; border-left-color: #0ff; border-radius: 50%; animation: cyber-spin 1s linear infinite; box-shadow: 0 0 15px #0ff; }`
+  },
+  {
+    id: 'card-cyber',
+    title: 'Cyber Card',
+    category: 'Cards',
+    theme: 'Cyberpunk',
+    description: 'Angled tech data container',
+    language: 'react',
+    component: CyberCard,
+    code: `<div className="card-cyber">\n  <h3>SYSTEM STATUS</h3>\n  <p>OPTIMAL</p>\n</div>\n\n/* CSS */\n.card-cyber { background: #050505; border: 1px solid #333; padding: 1.5rem; clip-path: polygon(0 0, 100% 0, 100% 85%, 90% 100%, 0 100%); }`
+  },
+  // --- New Neumorphism Suite ---
+  {
+    id: 'input-neo',
+    title: 'Neo-Input',
+    category: 'Inputs',
+    theme: 'Neomorphism',
+    description: 'Soft inner shadow text field',
+    language: 'react',
+    component: NeoInput,
+    code: `<input type="text" className="input-neo" placeholder="Search..." />\n\n/* CSS */\n.input-neo { background: #1a1a1a; border: none; padding: 12px 20px; border-radius: 30px; color: #a0a0a0; box-shadow: inset 5px 5px 10px #0d0d0d, inset -5px -5px 10px #272727; }`
+  },
+  {
+    id: 'radio-neo',
+    title: 'Neo-Radio',
+    category: 'Inputs',
+    theme: 'Neomorphism',
+    description: 'Soft extruded radio button',
+    language: 'react',
+    component: NeoRadio,
+    code: `<div className="radio-neo"></div>\n\n/* CSS */\n.radio-neo { appearance: none; width: 24px; height: 24px; background: #1a1a1a; border-radius: 50%; box-shadow: 5px 5px 10px #0d0d0d, -5px -5px 10px #272727; cursor: pointer; }`
+  },
+  {
+    id: 'badge-neo',
+    title: 'Neo-Badge',
+    category: 'Data Display',
+    theme: 'Neomorphism',
+    description: 'Small extruded pill label',
+    language: 'react',
+    component: NeoBadge,
+    code: `<span className="badge-neo">Premium</span>\n\n/* CSS */\n.badge-neo { background: #1a1a1a; padding: 5px 12px; border-radius: 12px; color: #3b82f6; font-size: 0.8rem; box-shadow: 3px 3px 6px #0d0d0d, -3px -3px 6px #272727; }`
+  },
+  // --- New Glassmorphism Suite ---
+  {
+    id: 'input-glass',
+    title: 'Glass Input',
+    category: 'Inputs',
+    theme: 'Glassmorphism',
+    description: 'Frosted transparent input field',
+    language: 'react',
+    component: GlassInput,
+    code: `<input type="text" className="input-glass" placeholder="Glass Input" />\n\n/* CSS */\n.input-glass { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); padding: 12px 20px; border-radius: 12px; color: white; }`
+  },
+  {
+    id: 'badge-glass',
+    title: 'Glass Badge',
+    category: 'Data Display',
+    theme: 'Glassmorphism',
+    description: 'Translucent status pill',
+    language: 'react',
+    component: GlassBadge,
+    code: `<span className="badge-glass">v2.0</span>\n\n/* CSS */\n.badge-glass { background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(5px); border: 1px solid rgba(255, 255, 255, 0.2); color: #fff; padding: 4px 10px; border-radius: 20px; font-size: 0.75rem; }`
+  },
+  {
+    id: 'clay-btn',
+    title: 'Clay Tactile Button',
+    category: 'Buttons',
+    theme: 'Polymorphism',
+    description: 'Squishy claymorphic button with soft shadows',
+    language: 'react',
+    component: ClayButton,
+    code: `<button className="clay-btn">Button</button>\n\n/* CSS */\n.clay-btn {\n  background: #ec4899;\n  border-radius: 16px;\n  padding: 0.75rem 1.5rem;\n  border: none;\n  color: white;\n  font-weight: bold;\n  box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.2),\n              inset 3px 3px 6px rgba(255, 255, 255, 0.4);\n}`
+  },
 ];

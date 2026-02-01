@@ -31,17 +31,35 @@ const itemVariants = {
 function App() {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
+  const [selectedTheme, setSelectedTheme] = useState('All');
+
+  const themes = useMemo(() => {
+    const themeMap = new Map<string, number>();
+    themeMap.set('All', components.length);
+
+    components.forEach(comp => {
+      const theme = comp.theme || 'Standard';
+      themeMap.set(theme, (themeMap.get(theme) || 0) + 1);
+    });
+
+    return Array.from(themeMap.entries()).map(([name, count]) => ({ name, count }));
+  }, []);
 
   const categories = useMemo(() => {
     const categoryMap = new Map<string, number>();
-    categoryMap.set('All', components.length);
 
-    components.forEach(comp => {
+    const availableComponents = selectedTheme === 'All'
+      ? components
+      : components.filter(c => (c.theme || 'Standard') === selectedTheme);
+
+    categoryMap.set('All', availableComponents.length);
+
+    availableComponents.forEach(comp => {
       categoryMap.set(comp.category, (categoryMap.get(comp.category) || 0) + 1);
     });
 
     return Array.from(categoryMap.entries()).map(([name, count]) => ({ name, count }));
-  }, []);
+  }, [selectedTheme]);
 
   const filteredComponents = useMemo(() => {
     return components.filter(comp => {
@@ -49,10 +67,12 @@ function App() {
         comp.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
         comp.category.toLowerCase().includes(searchQuery.toLowerCase());
       const matchesCategory = selectedCategory === 'All' || comp.category === selectedCategory;
+      const componentTheme = comp.theme || 'Standard';
+      const matchesTheme = selectedTheme === 'All' || componentTheme === selectedTheme;
 
-      return matchesSearch && matchesCategory;
+      return matchesSearch && matchesCategory && matchesTheme;
     });
-  }, [searchQuery, selectedCategory]);
+  }, [searchQuery, selectedCategory, selectedTheme]);
 
   return (
     <div className="app">
@@ -99,21 +119,51 @@ function App() {
             />
           </div>
 
-          <div className="categories">
-            {categories.map((cat, index) => (
-              <motion.button
-                key={cat.name}
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.3 + index * 0.05 }}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className={`category-btn ${selectedCategory === cat.name ? 'active' : ''}`}
-                onClick={() => setSelectedCategory(cat.name)}
-              >
-                {cat.name} <span className="count">{cat.count}</span>
-              </motion.button>
-            ))}
+          <div style={{ marginBottom: '1.5rem' }}>
+            <h3 style={{ fontSize: '0.9rem', color: 'var(--text-tertiary)', marginBottom: '0.5rem', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Themes</h3>
+            <div className="categories themes">
+              {themes.map((theme, index) => (
+                <motion.button
+                  key={theme.name}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.2 + index * 0.05 }}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className={`category-btn theme-btn ${selectedTheme === theme.name ? 'active' : ''}`}
+                  onClick={() => {
+                    setSelectedTheme(theme.name);
+                    setSelectedCategory('All');
+                  }}
+                  style={{
+                    borderColor: selectedTheme === theme.name ? 'var(--accent-primary)' : 'var(--border-color)',
+                    background: selectedTheme === theme.name ? 'rgba(59, 130, 246, 0.1)' : 'var(--bg-secondary)'
+                  }}
+                >
+                  {theme.name} <span className="count">{theme.count}</span>
+                </motion.button>
+              ))}
+            </div>
+          </div>
+
+          <div style={{ marginBottom: '1.5rem' }}>
+            <h3 style={{ fontSize: '0.9rem', color: 'var(--text-tertiary)', marginBottom: '0.5rem', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Categories</h3>
+            <div className="categories">
+              {categories.map((cat, index) => (
+                <motion.button
+                  key={cat.name}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.3 + index * 0.05 }}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className={`category-btn ${selectedCategory === cat.name ? 'active' : ''}`}
+                  onClick={() => setSelectedCategory(cat.name)}
+                >
+                  {cat.name} <span className="count">{cat.count}</span>
+                </motion.button>
+              ))}
+            </div>
           </div>
         </motion.div>
 
